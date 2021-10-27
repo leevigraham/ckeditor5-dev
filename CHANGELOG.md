@@ -1,6 +1,343 @@
 Changelog
 =========
 
+## [25.4.5](https://github.com/ckeditor/ckeditor5-dev/compare/v25.4.4...v25.4.5) (2021-10-26)
+
+### Bug fixes
+
+* **[env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env)**: The `releaseSubRepositories()` task does not check the npm version if a package will not be published anyway. Closes [ckeditor/ckeditor5#10639](https://github.com/ckeditor/ckeditor5/issues/10639). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/8efbafbdc664a59fb011472ebd8096fd7314ce82))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.4.4 => v25.4.5
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.4.4 => v25.4.5
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.4.4 => v25.4.5
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.4.4 => v25.4.5
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.4.4 => v25.4.5
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.4.4 => v25.4.5
+</details>
+
+
+## [25.4.4](https://github.com/ckeditor/ckeditor5-dev/compare/v25.4.3...v25.4.4) (2021-09-23)
+
+### Bug fixes
+
+* **[env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env)**: The `getPackagesToRelease()` function handles pre-release versions properly. Closes [ckeditor/ckeditor5#10583](https://github.com/ckeditor/ckeditor5/issues/10583). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/ec16756e3de92e89bc933d706951d10b5bcb5798))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.4.3 => v25.4.4
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.4.3 => v25.4.4
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.4.3 => v25.4.4
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.4.3 => v25.4.4
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.4.3 => v25.4.4
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.4.3 => v25.4.4
+</details>
+
+
+## [25.4.3](https://github.com/ckeditor/ckeditor5-dev/compare/v25.4.2...v25.4.3) (2021-09-22)
+
+### Other changes
+
+* **[tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests)**: Added in the Karma configuration a list of available plugins to avoid an error related to loading a non-registered plugin. ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/69b1fec9378ee06d1fe89e2379d62c86507d2606))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.4.2 => v25.4.3
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.4.2 => v25.4.3
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.4.2 => v25.4.3
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.4.2 => v25.4.3
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.4.2 => v25.4.3
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.4.2 => v25.4.3
+</details>
+
+
+## [25.4.2](https://github.com/ckeditor/ckeditor5-dev/compare/v25.4.1...v25.4.2) (2021-08-30)
+
+### Bug fixes
+
+* **[env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env)**: The "generateChangelog()" util will not crash when merging "Updated translations." commits found in the private repositories. Closes [ckeditor/ckeditor5#10445](https://github.com/ckeditor/ckeditor5/issues/10445). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/d3bc4954811747822990b337dd7b5bf9e231a099))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.4.1 => v25.4.2
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.4.1 => v25.4.2
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.4.1 => v25.4.2
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.4.1 => v25.4.2
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.4.1 => v25.4.2
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.4.1 => v25.4.2
+</details>
+
+
+## [25.4.1](https://github.com/ckeditor/ckeditor5-dev/compare/v25.4.0...v25.4.1) (2021-08-19)
+
+### Bug fixes
+
+* **[utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils)**: The `tools.clean()` function will resolve paths correctly on Windows environments. Closes [ckeditor/ckeditor5#10141](https://github.com/ckeditor/ckeditor5/issues/10141). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/58d183695a2e180dcb7f00b9fcd8e62dcabc3b51))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.4.0 => v25.4.1
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.4.0 => v25.4.1
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.4.0 => v25.4.1
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.4.0 => v25.4.1
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.4.0 => v25.4.1
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.4.0 => v25.4.1
+</details>
+
+
+## [25.4.0](https://github.com/ckeditor/ckeditor5-dev/compare/v25.3.1...v25.4.0) (2021-08-12)
+
+### Features
+
+* **[webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin)**: Introduced several new options that improve the output files produced by the plugin. ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/4a6ed132f60ef6b981e77a612844a0960750f632))
+
+  New options:
+    * `corePackageContextsResourcePath` - (optional) a path to the file where all translation contexts are specified for the `ckeditor5-core` package. Defaults to `'@ckeditor/ckeditor5-core/lang/contexts.json'`.
+    * `includeCorePackageTranslations` - (optional) a flag that determines whether all translations found in the core package should be added to the output bundle file. If set to `true`, translations from the core package will be saved even if they are not used in the source code (*.js files). Defaults to `false`.
+    * `skipPluralFormFunction`- (optional) a flag that determines whether the `getPluralForm()` function should not be added in the output bundle file. Defaults to `false`.
+
+### Other changes
+
+* **[utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils)**: The webpack configuration for DLL builds now produces the translation files. ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/4a6ed132f60ef6b981e77a612844a0960750f632))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Releases containing new features:
+
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.3.1 => v25.4.0
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.3.1 => v25.4.0
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.3.1 => v25.4.0
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.3.1 => v25.4.0
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.3.1 => v25.4.0
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.3.1 => v25.4.0
+</details>
+
+
+## [25.3.1](https://github.com/ckeditor/ckeditor5-dev/compare/v25.3.0...v25.3.1) (2021-08-11)
+
+### Other changes
+
+* **[docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs)**: The web-crawler configuration now allows ignoring HTTPS errors. ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/3e1af9470a59ac7b34a64150699296d50ff603ed))
+
+  New options:
+
+  * `ignoreHTTPSErrors` - (optional) a flag passed to the browser creator that allows ignoring HTTPS errors (e.g., when validating over HTTPS with a self-signed certificate). Defaults to `false`.
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.3.0 => v25.3.1
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.3.0 => v25.3.1
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.3.0 => v25.3.1
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.3.0 => v25.3.1
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.3.0 => v25.3.1
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.3.0 => v25.3.1
+</details>
+
+
+## [25.3.0](https://github.com/ckeditor/ckeditor5-dev/compare/v25.2.6...v25.3.0) (2021-07-26)
+
+### Features
+
+* **[jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-jsdoc-plugins)**: Allowed DOMRect as a valid type in API docs. Closes [ckeditor/ckeditor5#10216](https://github.com/ckeditor/ckeditor5/issues/10216). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/8fbe39984d5ebb017bdbbf5d88d8d63eb4bd2cf5))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Releases containing new features:
+
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.2.6 => v25.3.0
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.2.6 => v25.3.0
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.2.6 => v25.3.0
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.2.6 => v25.3.0
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.2.6 => v25.3.0
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.2.6 => v25.3.0
+</details>
+
+
+## [25.2.6](https://github.com/ckeditor/ckeditor5-dev/compare/v25.2.5...v25.2.6) (2021-07-13)
+
+### Bug fixes
+
+* **[tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests)**: Prevented `isDevDependency()` function from reading "theme" word from the `ckeditor5-theme-lark` package name. See [ckeditor/ckeditor5#9998](https://github.com/ckeditor/ckeditor5/issues/9998). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/ecf792feef7bebccdf065a3147251187b7c6ff34))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.2.5 => v25.2.6
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.2.5 => v25.2.6
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.2.5 => v25.2.6
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.2.5 => v25.2.6
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.2.5 => v25.2.6
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.2.5 => v25.2.6
+</details>
+
+
+## [25.2.5](https://github.com/ckeditor/ckeditor5-dev/compare/v25.2.4...v25.2.5) (2021-07-12)
+
+### Other changes
+
+* **[env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env)**: Set the proper exit code when found an error when collecting translations. Closes [ckeditor/ckeditor5#10123](https://github.com/ckeditor/ckeditor5/issues/10123). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/36d1190feb0b0386533b88be431f05832b4a922a))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.2.4 => v25.2.5
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.2.4 => v25.2.5
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.2.4 => v25.2.5
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.2.4 => v25.2.5
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.2.4 => v25.2.5
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.2.4 => v25.2.5
+</details>
+
+
+## [25.2.4](https://github.com/ckeditor/ckeditor5-dev/compare/v25.2.3...v25.2.4) (2021-06-28)
+
+### Other changes
+
+* **[tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests)**: Set watermarks for code coverage reports so anything less than 100% is instantly visible. Closes [ckeditor/ckeditor5#9956](https://github.com/ckeditor/ckeditor5/issues/9956). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/d194777447edd5c9203ae8c5ce25a6dc57a19707))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.2.3 => v25.2.4
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.2.3 => v25.2.4
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.2.3 => v25.2.4
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.2.3 => v25.2.4
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.2.3 => v25.2.4
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.2.3 => v25.2.4
+</details>
+
+
+## [25.2.3](https://github.com/ckeditor/ckeditor5-dev/compare/v25.2.2...v25.2.3) (2021-06-21)
+
+### Bug fixes
+
+* **[tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests)**: Fixed a faulty regexp that did not care about Windows environments for manual tests. Closes [ckeditor/ckeditor5#9849](https://github.com/ckeditor/ckeditor5/issues/9849). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/48046b229e9d69bca6ca07c99f5bdb632fec8dc5))
+
+### Other changes
+
+* **[tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests)**: The Slack notifier script will read the commit message from GitHub API for a particular commit. If the `SLACK_NOTIFY_COMMIT_URL` variable is specified, the value will be treated as the commit. Otherwise, a concatenation of `TRAVIS_REPO_SLUG`, and `TRAVIS_COMMIT` variables will be used. ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/2ae29b30e9c719abc7b45c8e314bb36188b98b9d))
+* **[tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests)**: The Slack notifier will print a message if a commit was made by a bot (as a result of merging branches). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/2ae29b30e9c719abc7b45c8e314bb36188b98b9d))
+* **[tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests)**: The Slack notifier script will work if a commit comes from the `#stable` branch. ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/2ae29b30e9c719abc7b45c8e314bb36188b98b9d))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.2.2 => v25.2.3
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.2.2 => v25.2.3
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.2.2 => v25.2.3
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.2.2 => v25.2.3
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.2.2 => v25.2.3
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.2.2 => v25.2.3
+</details>
+
+
+## [25.2.2](https://github.com/ckeditor/ckeditor5-dev/compare/v25.2.1...v25.2.2) (2021-06-10)
+
+### Other changes
+
+* **[tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests)**: Added the always visible button that navigates back to the list of manual tests. Refined the look of the list of manual tests. Closes [ckeditor/ckeditor5#9843](https://github.com/ckeditor/ckeditor5/issues/9843). ([commit](https://github.com/ckeditor/ckeditor5-dev/commit/102a966dd603f14b8531b7d9f11d2944821fbff0))
+
+### Released packages
+
+Check out the [Versioning policy](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/support/versioning-policy.html) guide for more information.
+
+<details>
+<summary>Released packages (summary)</summary>
+
+Other releases:
+
+* [@ckeditor/ckeditor5-dev-docs](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-docs): v25.2.1 => v25.2.2
+* [@ckeditor/ckeditor5-dev-env](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-env): v25.2.1 => v25.2.2
+* [@ckeditor/ckeditor5-dev-tests](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-tests): v25.2.1 => v25.2.2
+* [@ckeditor/ckeditor5-dev-utils](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-utils): v25.2.1 => v25.2.2
+* [@ckeditor/ckeditor5-dev-webpack-plugin](https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-webpack-plugin): v25.2.1 => v25.2.2
+* [@ckeditor/jsdoc-plugins](https://www.npmjs.com/package/@ckeditor/jsdoc-plugins): v25.2.1 => v25.2.2
+</details>
+
+
 ## [25.2.1](https://github.com/ckeditor/ckeditor5-dev/compare/v25.2.0...v25.2.1) (2021-05-21)
 
 ### Other changes
