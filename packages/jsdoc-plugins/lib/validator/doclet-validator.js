@@ -80,15 +80,153 @@ class DocletValidator {
 		this._validateTypedefs();
 		this._validateExtensibility();
 		this._checkDuplicatedDoclets();
+		this._findInheritedMethods();
 
 		return this.errors;
+	}
+
+	/**
+	 * Tries to find all symbols that override inherited properties from a parent class or a mixing and miss the `@override` annotation.
+	 *
+	 * @todo: Extract it to a separate class with a proper structure.
+	 * @private
+	 */
+	_findInheritedMethods() {
+		// A map containing symbols of classes/mixins/interfaces that a child class extends or mixes.
+		// For the following example, "module:foo~Foo" and "module:observable~Observable" symbols will be processed.
+		//
+		// @extends module:foo~Foo
+		// @mixes module:observable~Observable
+		// class Bar extends Foo { /* ... */ }
+		const baseSymbols = new Map();
+
+		// A map containing symbols of classes/mixins/interfaces that inherit anything from a class or a mixin.
+		// For the following example, the "module:bar~Bar" symbol will be processed.
+		//
+		// @extends module:foo~Foo
+		// @mixes module:observable~Observable
+		// class Bar extends Foo { /* ... */ }
+		const extendedSymbols = new Map();
+
+		// TODO: Should we process only classes here?
+		for ( const singleDoclet of this._collection.getAll() ) {
+			const augmentsAndMixesSymbols = [].concat( singleDoclet.augments, singleDoclet.mixes ).filter( Boolean );
+
+			// Save symbols when a class inherits.
+			if ( augmentsAndMixesSymbols.length ) {
+				for ( const augmentOrMixSymbol of augmentsAndMixesSymbols ) {
+					baseSymbols.set( augmentOrMixSymbol, singleDoclet );
+				}
+
+				extendedSymbols.set( singleDoclet.longname, singleDoclet );
+			}
+		}
+
+		// Temporary map used for filling the `classAndProperties` collection.
+		const docletMap = createDocletMap( this._collection );
+
+		// A map that will contain a name of module and all its symbols.
+		const classAndProperties = new Map();
+
+		// Find all `#methods()` and `#properties` for base classes/mixes.
+		for ( const [ docletName ] of baseSymbols ) {
+			if ( !this._collection._allLongnames.includes( docletName ) ) {
+				baseSymbols.delete( docletName );
+				continue;
+			}
+
+			classAndProperties.set( docletName, docletMap[ docletName ] );
+		}
+
+		// Find all `#methods()` and `#properties` for classes that inherit.
+		for ( const [ docletName ] of extendedSymbols ) {
+			if ( !this._collection._allLongnames.includes( docletName ) ) {
+				extendedSymbols.delete( docletName );
+				continue;
+			}
+
+			classAndProperties.set( docletName, docletMap[ docletName ] );
+		}
+
+		// For every class that inherits...
+		for ( const [ docletName, classDoclet ] of extendedSymbols ) {
+			// ...check a single property (methods and properties)...
+			for ( const propertyDoclet of classAndProperties.get( docletName ) ) {
+				// If a property is inherited/mixed, it isn't specified in the class directly.
+				if ( propertyDoclet.inherited || propertyDoclet.mixed ) {
+					continue;
+				}
+
+				const augmentsAndMixesSymbols = [].concat( classDoclet.augments, classDoclet.mixes ).filter( Boolean );
+
+				// ...if it is also specified in an augment class or a mixin module.
+				for ( const augmentOrMixModuleName of augmentsAndMixesSymbols ) {
+					// Missing doclet for the "module:engine/view/observer/bubblingemittermixin~BubblingEmitterMixin" module.
+					if ( augmentOrMixModuleName === 'module:engine/view/observer/bubblingemittermixin~BubblingEmitterMixin' ) {
+						continue;
+					}
+
+					// The following modules lack their symbols:
+					// * Error
+					// * ObservableMixin
+					// * module:utils/domemittermixin~DomEmitterMixin
+					if ( !classAndProperties.get( augmentOrMixModuleName ) ) {
+						continue;
+					}
+
+					const propertyName = getPropertyNameFromDoclet( propertyDoclet );
+
+					const augmentOrMixPropertiesNames = new Map(
+						classAndProperties.get( augmentOrMixModuleName ).map( doclet => [ getPropertyNameFromDoclet( doclet ), doclet ] )
+					);
+
+					// A parent module does not contain the property specified in the inherited class.
+					if ( !augmentOrMixPropertiesNames.has( propertyName ) ) {
+						continue;
+					}
+
+					// If parent class defines an abstract method, an inherited class must implement it.
+					if ( augmentOrMixPropertiesNames.get( propertyName ).virtual ) {
+						continue;
+					}
+
+					if ( !propertyDoclet.override ) {
+						this._addError( propertyDoclet, `Missing @override annotation for the '${ propertyDoclet.longname }' docs.` );
+					}
+				}
+			}
+		}
+
+		// Prepares a map containing a full name of module and its properties and methods.
+		//
+		// @param {DocletCollection} doclets
+		// @returns {Object.<String, Array.<Doclet>>}
+		function createDocletMap( doclets ) {
+			const docletMap = {};
+
+			for ( const doclet of doclets.getAll() ) {
+				if ( !docletMap[ doclet.memberof ] ) {
+					docletMap[ doclet.memberof ] = [];
+				}
+
+				docletMap[ doclet.memberof ].push( doclet );
+			}
+
+			return docletMap;
+		}
+
+		// @param {Doclet}
+		// @returns {String}
+		function getPropertyNameFromDoclet( doclet ) {
+			return doclet.longname.split( /[.#]/ )[ 1 ];
+		}
 	}
 
 	/**
 	 * Finds incorrectly documented members.
 	 *
 	 * @protected
-	*/
+	 */
 	_validateMembers() {
 		this._collection.get( 'member' )
 			.filter( member => member.name.startsWith( 'module:' ) )

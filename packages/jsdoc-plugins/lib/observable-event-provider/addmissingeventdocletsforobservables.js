@@ -7,6 +7,13 @@
 
 const { cloneDeep } = require( 'lodash' );
 
+// List of properties that will be copied from properties when creating doclet for events.
+const PROPERTIES_TO_COPY = [
+	'inherited',
+	'mixed',
+	'override'
+];
+
 /**
  * Creates event doclets for observable properties if they're missing.
  * See #285.
@@ -107,12 +114,10 @@ function createMissingEventDoclets( doclets ) {
 				access: originalProperty.access ? originalProperty.access : 'public'
 			};
 
-			if ( originalProperty.inherited ) {
-				eventDoclet.inherited = true;
-			}
-
-			if ( originalProperty.mixed ) {
-				eventDoclet.mixed = true;
+			for ( const property of PROPERTIES_TO_COPY ) {
+				if ( originalProperty[ property ] ) {
+					eventDoclet[ property ] = true;
+				}
 			}
 
 			return eventDoclet;

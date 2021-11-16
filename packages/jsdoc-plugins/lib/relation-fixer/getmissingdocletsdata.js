@@ -40,17 +40,25 @@ function getMissingDocletsData( docletMap, docletCollection, interfaceClassOrMix
 		}
 
 		const docletsOfSameMember = docletCollection.get( `memberof:${ clonedDoclet.memberof }` ).filter( d => {
-			return d.name === clonedDoclet.name && d.kind === clonedDoclet.kind;
+			// Different types, so avoid comparing their names.
+			if ( d.kind !== clonedDoclet.kind ) {
+				return false;
+			}
+
+			// Static members are separated using the dot character.
+			const docletName = d.name.replace( /^[#.]/, '' );
+			const clonedDocletName = clonedDoclet.name.replace( /^[#.]/, '' );
+
+			return docletName === clonedDocletName;
 		} );
 
 		if ( docletsOfSameMember.length === 0 ) {
 			// If there was no doclet for that member, simply add it to new doclets.
 			newDoclets.push( clonedDoclet );
 		} else if ( doAllParentsExplicitlyInherit( docletsOfSameMember ) && !options.onlyImplicitlyInherited ) {
-			// If all doclets in the chain for that member already existed and used `inheritdoc` or `overrides`.
+			// If all doclets in the chain for that member already exists and used `inheritdoc` or `overrides`.
 			// Add `ignore` property to existing doclets. Unless 'onlyImplicitlyInherited' option is set.
 			docletsWhichShouldBeIgnored.push( ...docletsOfSameMember );
-
 			newDoclets.push( clonedDoclet );
 		} else if ( docletsOfSameMember.length >= 2 ) {
 			const correctDoclet = cloneDeep( docletsOfSameMember[ 0 ] );

@@ -26,7 +26,7 @@ exports.handlers = {
 			knownDoclets.set( doclet.longname, doclet );
 
 			// Delete props that we don't use.
-			delete doclet.overrides;
+			// delete doclet.overrides;
 		}
 
 		/** @type {Map.<String,Array.<Doclet>>} */
