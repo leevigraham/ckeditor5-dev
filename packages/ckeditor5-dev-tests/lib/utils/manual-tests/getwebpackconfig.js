@@ -40,6 +40,10 @@ module.exports = function getWebpackConfigForManualTests( options ) {
 			path: options.buildDir
 		},
 
+		resolve: {
+			extensions: [ '.js', '.ts', '.json' ]
+		},
+
 		plugins: [
 			new WebpackNotifierPlugin(),
 			new CKEditorWebpackPlugin( {
@@ -56,6 +60,11 @@ module.exports = function getWebpackConfigForManualTests( options ) {
 
 		module: {
 			rules: [
+				{
+					test: /\.ts$/,
+					use: 'ts-loader',
+					exclude: /node_modules/
+				},
 				{
 					test: /\.svg$/,
 					use: [ 'raw-loader' ]
