@@ -24,8 +24,17 @@ module.exports = function getWebpackConfigForAutomatedTests( options ) {
 			} )
 		],
 
+		resolve: {
+			extensions: [ '.js', '.ts', '.json' ]
+		},
+
 		module: {
 			rules: [
+				{
+					test: /\.ts$/,
+					use: 'ts-loader',
+					exclude: /node_modules/
+				},
 				{
 					// test: **/ckeditor5-*/theme/icons/*.svg
 					test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
