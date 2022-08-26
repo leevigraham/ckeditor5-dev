@@ -16,7 +16,7 @@ const getDefinitionsFromFile = require( '../getdefinitionsfromfile' );
  * @returns {Object}
  */
 module.exports = function getWebpackConfigForAutomatedTests( options ) {
-	console.log( 'MIC CHECK 9' );
+	console.log( 'MIC CHECK 10' );
 
 	const definitions = Object.assign( {}, getDefinitionsFromFile( options.identityFile ) );
 
@@ -112,6 +112,10 @@ module.exports = function getWebpackConfigForAutomatedTests( options ) {
 					]
 				}
 			]
+		},
+
+		cache: {
+			type: 'filesystem'
 		},
 
 		resolveLoader: {
