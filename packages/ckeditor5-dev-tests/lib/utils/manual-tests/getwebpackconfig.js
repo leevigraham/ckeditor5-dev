@@ -131,6 +131,10 @@ module.exports = function getWebpackConfigForManualTests( options ) {
 				'node_modules',
 				path.resolve( __dirname, '..', '..', '..', 'node_modules' )
 			]
+		},
+
+		cache: {
+			type: 'filesystem'
 		}
 	};
 

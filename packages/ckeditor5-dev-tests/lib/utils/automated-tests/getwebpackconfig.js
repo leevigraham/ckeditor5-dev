@@ -16,7 +16,7 @@ const getDefinitionsFromFile = require( '../getdefinitionsfromfile' );
  * @returns {Object}
  */
 module.exports = function getWebpackConfigForAutomatedTests( options ) {
-	console.log( 'MIC CHECK 10' );
+	console.log( 'MIC CHECK 11' );
 
 	const definitions = Object.assign( {}, getDefinitionsFromFile( options.identityFile ) );
 
@@ -114,10 +114,6 @@ module.exports = function getWebpackConfigForAutomatedTests( options ) {
 			]
 		},
 
-		cache: {
-			type: 'filesystem'
-		},
-
 		resolveLoader: {
 			modules: [
 				'node_modules',
@@ -128,6 +124,10 @@ module.exports = function getWebpackConfigForAutomatedTests( options ) {
 		output: {
 			// Get rid of the "webpack://" protocol to make the paths clickable in the terminal.
 			devtoolModuleFilenameTemplate: info => info.resourcePath
+		},
+
+		cache: {
+			type: 'filesystem'
 		}
 	};
 
