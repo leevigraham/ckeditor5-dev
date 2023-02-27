@@ -80,6 +80,28 @@ describe( 'getWebpackConfigForAutomatedTests()', () => {
 		const babelLoader = coverageLoader.use[ 0 ];
 
 		expect( babelLoader.loader ).to.equal( 'babel-loader' );
+		expect( babelLoader.options ).to.be.an( 'object' );
+		expect( babelLoader.options ).to.have.property( 'plugins' );
+		expect( babelLoader.options.plugins ).to.be.an( 'array' );
+		expect( babelLoader.options.plugins ).to.include( 'babel-plugin-istanbul' );
+	} );
+
+	it( 'should add the "transform-typescript" babel plugin to the coverage loader', () => {
+		const webpackConfig = getWebpackConfigForAutomatedTests( {
+			coverage: true,
+			files: [ '**/*.js' ]
+		} );
+
+		const coverageLoader = webpackConfig.module.rules[ 0 ];
+
+		expect( coverageLoader ).to.not.equal( undefined );
+
+		const babelLoader = coverageLoader.use[ 0 ];
+		expect( babelLoader.loader ).to.equal( 'babel-loader' );
+		expect( babelLoader.options ).to.be.an( 'object' );
+		expect( babelLoader.options ).to.have.property( 'plugins' );
+		expect( babelLoader.options.plugins ).to.be.an( 'array' );
+		expect( babelLoader.options.plugins ).to.include( '@babel/plugin-transform-typescript' );
 	} );
 
 	it( 'should include the ck-debug-loader when checking the coverage', () => {

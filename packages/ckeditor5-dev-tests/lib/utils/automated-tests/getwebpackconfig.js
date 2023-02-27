@@ -148,7 +148,8 @@ module.exports = function getWebpackConfigForAutomatedTests( options ) {
 						loader: 'babel-loader',
 						options: {
 							plugins: [
-								'babel-plugin-istanbul'
+								'babel-plugin-istanbul',
+								'@babel/plugin-transform-typescript'
 							]
 						}
 					},

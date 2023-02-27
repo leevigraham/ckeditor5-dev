@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "@babel/core": "^7.10.5",
+    "@babel/plugin-transform-typescript": "^7.21.0",
     "@ckeditor/ckeditor5-dev-utils": "^34.1.1",
     "@ckeditor/ckeditor5-dev-translations": "^34.1.1",
     "@ckeditor/ckeditor5-inspector": "^4.0.0",
